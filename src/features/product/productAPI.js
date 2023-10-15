@@ -9,16 +9,18 @@ export function fetchAllProducts() {
 }
 
 export function fetchAllProductsByFilters(filter) {
-//filter = {"category": "smartphone"}
-let quaryString = "";
+  //filter = {"category": "smartphone"}
+  // TODO: on server we will support multi values
+  let queryString = "";
 
-for(let key in filter){
-  quaryString += `${key} = ${filter[key]}`
-}
+  for (let key in filter) {
+    queryString += `${key}=${filter[key]}&`
+  }
+  console.log(queryString);
 
   return new Promise(async (resolve) => {
     // TODO: we will not hard-code server url here
-    const response = await fetch('http://localhost:8080/products?'+quaryString);
+    const response = await fetch('http://localhost:8080/products?' + queryString);
     const data = await response.json();
     resolve(data);
   }
