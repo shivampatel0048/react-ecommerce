@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Counter } from './features/counter/Counter';
-import ProductList from './features/product-list/components/ProductList';
+import ProductList from './features/product/components/ProductList';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
