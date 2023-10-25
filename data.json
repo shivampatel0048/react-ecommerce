@@ -2333,5 +2333,47 @@
       "label": "lighting",
       "checked": false
     }
+  ],
+  "users": [
+    {
+      "email": "litod68413@mitigado.com",
+      "password": "Shivam123",
+      "id": 1
+    },
+    {
+      "email": "litod68413+123@mitigado.com",
+      "password": "Shivam12345",
+      "id": 2
+    },
+    {
+      "email": "litod68413@mitigado.com",
+      "password": "Shiv1234",
+      "id": 3
+    },
+    {
+      "email": "litod68413@mitigado.com",
+      "password": "Shiv1234",
+      "id": 4
+    },
+    {
+      "email": "litod68413@mitigado.com",
+      "password": "Shiv1234",
+      "id": 5
+    },
+    {
+      "email": "edu.shivampatel@gmail.com",
+      "password": "Shiv1234",
+      "id": 6
+    },
+    {
+      "email": "Shivampatel0048@gmail.com",
+      "password": "Shivam1234",
+      "id": 7
+    },
+    {
+      "email": "litod68413@mitigado.com",
+      "password": "Shivam12345",
+      "id": 8
+    }
   ]
 }
