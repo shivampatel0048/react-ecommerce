@@ -10,11 +10,10 @@ export default function Login() {
   const error = useSelector(selectError);
   const user = useSelector(selectLoggedInUser);
   const { register, handleSubmit, watch, formState: { errors } } = useForm() // from "react-hook-form"
-  console.log(errors)
 
   return (
     <>
-    {user&& <Navigate to='/' replace={true}></Navigate>}
+      {user && <Navigate to='/' replace={true}></Navigate>}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -34,7 +33,10 @@ export default function Login() {
                 checkUserAsync({ email: data.email, password: data.password })
               )
             })}
-            className="space-y-6" action="#" method="POST">
+            className="space-y-6"
+            // action="#"
+            // method="POST"
+          >
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
