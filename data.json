@@ -2340,31 +2340,22 @@
       "password": "Shivam123",
       "addresses": [
         {
-          "name": "Shivam Patel",
+          "name": "Shivam Bhai",
           "email": "Shivampatel0048@gmail.com",
           "phone": "9691159886",
-          "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
           "city": "Bhopal",
+          "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
           "state": "Madhya Pradesh",
           "pinCode": "462010"
         },
         {
-          "name": "Shivam Patel",
-          "email": "Shivampatel0048@gmail.com",
-          "phone": "9691159886",
-          "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
-          "city": "Bhopal",
-          "state": "Madhya Pradesh",
-          "pinCode": "462010"
-        },
-        {
-          "name": "Shivam",
-          "email": "Shivampatel0048@gmail.com",
+          "name": "Mahima",
+          "email": "Shivampate9691@gmail.com",
           "phone": "09691159886",
-          "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
-          "city": "Bhopal",
-          "state": "Madhya Pradesh",
-          "pinCode": "462020"
+          "street": "Lalitpur",
+          "city": "jakshlaun",
+          "state": "UP",
+          "pinCode": "284403"
         }
       ],
       "id": 1
@@ -2372,21 +2363,32 @@
     {
       "email": "edu.shivampatel@gmail.com",
       "password": "Shiv1234",
-      "addresses": [
-        {
-          "name": "Shivam",
-          "email": "Shivampatel0048@gmail.com",
-          "phone": "09691159886",
-          "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
-          "city": "Bhopal",
-          "state": "Madhya Pradesh",
-          "pinCode": "462010"
-        }
-      ],
+      "addresses": [],
       "id": 2
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/2/1.jpg",
+        "https://i.dummyjson.com/data/products/2/2.jpg",
+        "https://i.dummyjson.com/data/products/2/3.jpg",
+        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": 1,
+      "id": 1
+    }
+  ],
   "orders": [
     {
       "items": [
@@ -2784,6 +2786,79 @@
       },
       "status": "pending",
       "id": 6
+    },
+    {
+      "items": [
+        {
+          "title": "Microsoft Surface Laptop 4",
+          "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
+          "price": 1499,
+          "discountPercentage": 10.23,
+          "rating": 4.43,
+          "stock": 68,
+          "brand": "Microsoft Surface",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/8/1.jpg",
+            "https://i.dummyjson.com/data/products/8/2.jpg",
+            "https://i.dummyjson.com/data/products/8/3.jpg",
+            "https://i.dummyjson.com/data/products/8/4.jpg",
+            "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 1499,
+      "totalItems": 1,
+      "user": {
+        "email": "litod68413@mitigado.com",
+        "password": "Shivam123",
+        "addresses": [
+          {
+            "name": "Shivam Patel",
+            "email": "Shivampatel0048@gmail.com",
+            "phone": "9691159886",
+            "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
+            "city": "Bhopal",
+            "state": "Madhya Pradesh",
+            "pinCode": "462010"
+          },
+          {
+            "name": "Shivam Patel",
+            "email": "Shivampatel0048@gmail.com",
+            "phone": "9691159886",
+            "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
+            "city": "Bhopal",
+            "state": "Madhya Pradesh",
+            "pinCode": "462010"
+          },
+          {
+            "name": "Shivam",
+            "email": "Shivampatel0048@gmail.com",
+            "phone": "09691159886",
+            "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
+            "city": "Bhopal",
+            "state": "Madhya Pradesh",
+            "pinCode": "462020"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "card",
+      "selectAddress": {
+        "name": "Shivam",
+        "email": "Shivampatel0048@gmail.com",
+        "phone": "09691159886",
+        "street": "House No. 04 Saraswati Nager Semra Chandbad Huzur",
+        "city": "Bhopal",
+        "state": "Madhya Pradesh",
+        "pinCode": "462020"
+      },
+      "status": "pending",
+      "id": 7
     }
   ]
 }
