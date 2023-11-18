@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { updateUserAsync } from '../features/auth/authSlice';
 import { createOrderAsync, selectCurrentOrder } from '../features/order/orderSlice';
 import { selectUserInfo } from '../features/user/userSlice';
+import { discountedPrice } from '../app/constants';
 
 // const addresses = [
 //     {
@@ -27,11 +28,11 @@ import { selectUserInfo } from '../features/user/userSlice';
 // ]
 const Checkout = () => {
     const dispatch = useDispatch();
-    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm() // from "react-hook-form"
+    const { register, handleSubmit, reset } = useForm() // from "react-hook-form"
     const user = useSelector(selectUserInfo);
     const items = useSelector(selectItems);
     const currentOrder = useSelector(selectCurrentOrder);
-    const totalAmount = items.reduce((amount, item) => item.price * item.quantity + amount, 0);
+    const totalAmount = items.reduce((amount, item) => discountedPrice(item) * item.quantity + amount, 0);
     const totalItems = items.reduce((total, item) => item.quantity + total, 0);
     const [selectAddress, setSelectAddress] = useState(null);
     const [paymentMethod, setpaymentMethod] = useState('cash');
@@ -217,7 +218,7 @@ const Checkout = () => {
                                         Choose from existing addresses
                                     </p>
 
-                                    <ul role="list">
+                                    <ul>
                                         {user.addresses.map((address, index) => (
                                             <li key={index} className="flex justify-between gap-x-6 px-5 py-5 border-solid border-2 border-gray">
                                                 <div className="flex min-w-0 gap-x-4">
@@ -288,7 +289,7 @@ const Checkout = () => {
                             <h1 className="text-4xl font-bold my-3 text-center tracking-tight text-gray-900">Cart</h1>
                             <div className="border-t border-gray-200 px-0 py-6 sm:px-0">
                                 <div className="flow-root">
-                                    <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                    <ul className="-my-6 divide-y divide-gray-200">
                                         {items.map((item) => (
                                             <li key={item.id} className="flex py-6">
                                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -305,7 +306,7 @@ const Checkout = () => {
                                                             <h3>
                                                                 <a href={item.href}>{item.title}</a>
                                                             </h3>
-                                                            <p className="ml-4">${item.price}</p>
+                                                            <p className="ml-4">${discountedPrice(item)}</p>
                                                         </div>
                                                         <p className="mt-1 text-sm text-gray-500">{item.brand}</p>
                                                     </div>

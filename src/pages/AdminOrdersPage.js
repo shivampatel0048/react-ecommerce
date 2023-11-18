@@ -1,17 +1,17 @@
 import React from 'react';
 import Navbar from '../features/navbar/Navbar';
-import ProductDetail from '../features/product/components/ProductDetail';
+import AdminOrders from '../features/admin/components/AdminOrders';
 
-const ProductDetailPage = () => {
+const AdminOrdersPage = () => {
     return (
         <>
             <div>
                 <Navbar>
-                    <ProductDetail></ProductDetail>
+                    <AdminOrders></AdminOrders>
                 </Navbar>
             </div>
         </>
     )
 }
 
-export default ProductDetailPage;
+export default AdminOrdersPage;

@@ -1,17 +1,17 @@
 import React from 'react';
 import Navbar from '../features/navbar/Navbar';
-import ProductDetail from '../features/product/components/ProductDetail';
+import ProductForm from '../features/admin/components/ProductForm';
 
-const ProductDetailPage = () => {
+const AdminProductFormPage = () => {
     return (
         <>
             <div>
                 <Navbar>
-                    <ProductDetail></ProductDetail>
+                    <ProductForm></ProductForm>
                 </Navbar>
             </div>
         </>
     )
 }
 
-export default ProductDetailPage;
+export default AdminProductFormPage;

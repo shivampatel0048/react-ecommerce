@@ -1,13 +1,14 @@
-import React, { useState, Fragment } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { deleteItemFromCartAsync, selectItems, updateCartAsync } from './cartSlice';
+import { discountedPrice } from '../../app/constants';
 
 
 export default function Cart() {
   const dispatch = useDispatch();
   const items = useSelector(selectItems);
-  const totalAmount = items.reduce((amount, item) => item.price * item.quantity + amount, 0);
+  const totalAmount = items.reduce((amount, item) => discountedPrice(item) * item.quantity + amount, 0);
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
 
 
@@ -26,7 +27,7 @@ export default function Cart() {
         <h1 className="text-4xl font-bold my-3 text-center tracking-tight text-gray-900">Cart</h1>
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <div className="flow-root">
-            <ul role="list" className="-my-6 divide-y divide-gray-200">
+            <ul  className="-my-6 divide-y divide-gray-200">
               {items.map((item) => (
                 <li key={item.id} className="flex py-6">
                   <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -43,7 +44,7 @@ export default function Cart() {
                         <h3>
                           <a href={item.href}>{item.title}</a>
                         </h3>
-                        <p className="ml-4">${item.price}</p>
+                        <p className="ml-4">${discountedPrice(item)}</p>
                       </div>
                       <p className="mt-1 text-sm text-gray-500">{item.brand}</p>
                     </div>

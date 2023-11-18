@@ -48,6 +48,11 @@ export default function UserProfile() {
       <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold my-3 text-center tracking-tight text-gray-900">Name : {user.name ? user.name : "New User"}</h1>
         <h3 className="text-xl font-bold my-3 text-center tracking-tight text-red-900">Email Address : {user.email}</h3>
+        {user.role === 'admin' &&
+          <h3 className="text-xl font-bold my-3 text-center tracking-tight text-red-900">
+            Role : {user.role}
+          </h3>
+        }
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
         </div>
         <button

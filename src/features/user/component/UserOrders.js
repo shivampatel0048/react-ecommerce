@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchLoggedInUserOrdersAsync, selectUserInfo, selectUserOrders } from '../userSlice';
 import { useEffect } from 'react';
+import { discountedPrice } from '../../../app/constants';
 
 export default function UserOrders() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ export default function UserOrders() {
             <h3 className="text-xl font-bold my-3 text-center tracking-tight text-red-900">Order Status : {order.status}</h3>
             <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
               <div className="flow-root">
-                <ul role="list" className="-my-6 divide-y divide-gray-200">
+                <ul className="-my-6 divide-y divide-gray-200">
                   {order.items.map((item) => (
                     <li key={item.id} className="flex py-6">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -37,7 +38,7 @@ export default function UserOrders() {
                             <h3>
                               <a href={item.href}>{item.title}</a>
                             </h3>
-                            <p className="ml-4">${item.price}</p>
+                            <p className="ml-4">${discountedPrice(item)}</p>
                           </div>
                           <p className="mt-1 text-sm text-gray-500">{item.brand}</p>
                         </div>
