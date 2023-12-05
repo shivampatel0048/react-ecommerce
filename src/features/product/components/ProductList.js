@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBrandsAsync,fetchAllProductsByFiltersAsync, fetchCategoriesAsync, selectAllProducts, selectBrands, selectCategories, selectTotalItems } from '../productSlice';
+import { fetchBrandsAsync, fetchAllProductsByFiltersAsync, fetchCategoriesAsync, selectAllProducts, selectBrands, selectCategories, selectTotalItems } from '../productSlice';
 import { StarIcon } from '@heroicons/react/20/solid'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
@@ -85,7 +85,7 @@ export default function ProductList() {
     dispatch(fetchCategoriesAsync());
   }, [dispatch])
 
-  
+
   // useEffect(() => {
   //   dispatch(fetchBrandsAsync());
   //   dispatch(fetchCategoriesAsync());
@@ -376,6 +376,11 @@ function ProductGrid({ products }) {
                 {product.deleted && (
                   <div>
                     <p className="text-sm text-red-400">Product Deleted</p>
+                  </div>
+                )}
+                {product.stock <= 0 && (
+                  <div>
+                    <p className="text-sm text-red-400">Out of Stock</p>
                   </div>
                 )}
               </div>

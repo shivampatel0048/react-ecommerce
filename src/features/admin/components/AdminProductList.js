@@ -382,6 +382,7 @@ function Pagination({ page, setPage, handlePage, totalItems }) {
 
             {Array.from({ length: totalPages }).map((el, index) => (
               <div
+              key={index}
                 onClick={(e) => handlePage(page < totalPages ? page + 1 : page)}
                 thumbnail="#"
                 aria-current="page"
