@@ -81,7 +81,7 @@ export default function AdminProductList() {
 
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE }
-    dispatch(fetchAllProductsByFiltersAsync({ filter, sort, pagination }));
+    dispatch(fetchAllProductsByFiltersAsync({ filter, sort, pagination, admin: true }));
   }, [dispatch, filter, sort, page])
 
   useEffect(() => {
@@ -382,7 +382,7 @@ function Pagination({ page, setPage, handlePage, totalItems }) {
 
             {Array.from({ length: totalPages }).map((el, index) => (
               <div
-              key={index}
+                key={index}
                 onClick={(e) => handlePage(page < totalPages ? page + 1 : page)}
                 thumbnail="#"
                 aria-current="page"
@@ -440,7 +440,12 @@ function ProductGrid({ products }) {
                   </div>
                   {product.deleted && (
                     <div>
-                      <p className="text-sm text-red-400">Product Deleted</p>
+                      <p className="text-sm text-red-400">This product is deleted.</p>
+                    </div>
+                  )}
+                  {product.stock === 0 && (
+                    <div>
+                      <p className="text-sm text-red-400">Out of Stock</p>
                     </div>
                   )}
                 </div>

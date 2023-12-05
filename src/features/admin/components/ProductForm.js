@@ -45,7 +45,7 @@ function ProductForm() {
     }, [selectedProduct, params.id, setValue])
 
     const handleDelete = () => {
-        const product = {...selectedProduct};
+        const product = { ...selectedProduct };
         product.deleted = true;
         dispatch(updateProductAsync(product))
     }

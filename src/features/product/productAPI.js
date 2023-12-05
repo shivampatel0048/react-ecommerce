@@ -35,12 +35,12 @@ export function updateProduct(update) {
   );
 }
 
-export function fetchAllProductsByFilters(filter, sort, pagination) {
+export function fetchAllProductsByFilters(filter, sort, pagination, admin) {
   //filter = {"category": "smartphone", "laptops"}
   // sort = { _sort: "price", _order: "desc"}
   // Pagination = { _page: 1, _limit: 10} 
   // TODO: on server we will support multi values
-    //TODO: server will filter deleted products in case of non-admin
+  //TODO: server will filter deleted products in case of non-admin
 
 
   let queryString = "";
@@ -58,6 +58,9 @@ export function fetchAllProductsByFilters(filter, sort, pagination) {
   }
   for (let key in pagination) {
     queryString += `${key}=${pagination[key]}&`;
+  }
+  if(admin){
+    queryString += `admin=true`;
   }
 
   return new Promise(async (resolve) => {
